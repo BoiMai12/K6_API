@@ -1,0 +1,28 @@
+﻿
+         /\      Grafana   /ΓÇ╛ΓÇ╛/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ΓÇ╛ΓÇ╛\ 
+  /          \   |   (  |  (ΓÇ╛)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: dymmyAPI.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 40s max duration (incl. graceful stop):
+              * default: 2 looping VUs for 10s (gracefulStop: 30s)
+
+k6 : time="2026-10-12T16:23:38+07:00" level=info msg="[k6-reporter v3.0.4] Generating HTML summary report, with theme: 
+default" source=console
+At line:1 char:1
++ k6 run dymmyAPI.js 2>&1 | Out-File .\k6-output.log -Encoding utf8
++ ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (time="2026-10-1... source=console:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2026-10-12T16:23:38+07:00" level=error msg="ReferenceError: auth is not defined\n\tat setup 
+(file:///C:/BoiMai/K6/K6_L1/dymmyAPI.js:29:52(16))\n" hint="script exception" source=stacktrace
