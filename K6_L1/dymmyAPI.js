@@ -91,7 +91,7 @@ export default function (data) {
 
 export function handleSummary(data) {
     return {
-        "report.html": htmlReport(data),
-        'summary.json': JSON.stringify(data, null, 2),
+        "reports/report.html": htmlReport(data),
+        'reports/summary.json': JSON.stringify(data, null, 2),
     }
 }

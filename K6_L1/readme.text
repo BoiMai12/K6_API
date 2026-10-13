@@ -6,6 +6,15 @@ I. Install for windowns: 3 options
 II/ PowerSheel 
 Create the createdUser.csv file
 - Run k6 run --console-output=createdUsers.log dymmyAPI.js
+- Run :
+
+Get-Content .\createdUsers.log |
+    Where-Object { $_ -match 'CREATED_USER_CSV:' } |
+    ForEach-Object {
+        $json = ($_ -split 'CREATED_USER_CSV:', 2)[1]
+        $json | ConvertFrom-Json
+    } |
+    Export-Csv -Path .\createdUsers.csv -NoTypeInformation -Encoding UTF8
 
 II. Syntax
 Import libraries from k6
