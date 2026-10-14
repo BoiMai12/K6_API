@@ -4,7 +4,15 @@ I. Install for windowns: 3 options
 - file zip
 
 
-- Smoke test : k6 run --vus 1 --iterations 1 .\main.js
+
+
+Command	Purpose
+k6 run main.js	Run your test
+k6 run --vus 1 --iterations 1 main.js	Execute once for debugging
+k6 run --http-debug main.js	Log HTTP requests and responses
+k6 run --http-debug=full main.js	Include HTTP bodies
+
+Be careful with --http-debug=full: it may print passwords, tokens, and other sensitive data.
 
 II/ PowerSheel 
 Create the createdUser.csv file
@@ -72,3 +80,10 @@ K6/
 │   └── userService.js
 └── tests/
     └── createUserTest.js
+
+
+
+Remaining
+ NOTE: K6 use console.log to print-out the value when debugging    
+
+ Duplicated launch.json file

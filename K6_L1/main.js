@@ -5,18 +5,20 @@ import { login } from "./services/authServices.js";
 import { userLifeCycle } from "./scenarios/userLifeCycle.js";
 
 export const options = {
-    vus: 2,
+    vus: 1,
+    //  vus: 1,
+    iterations: 1,
     // duration: '10s',
-    stages: [
-        { duration: '30s', target: 5 },  // Ramp up
-        { duration: '1m', target: 5 },   // Steady load
-        { duration: '30s', target: 0 }  // Ramp down
-    ],
-    thresholds: {
-        http_req_duration: ['p(95)<1000'],
-        http_req_failed: ['rate<0.01'],
-        checks: ['rate>0.99']
-    }
+    // stages: [
+    //     { duration: '5s', target: 5 },  // Ramp up
+    //     { duration: '30s', target: 5 },   // Steady load
+    //     { duration: '5s', target: 0 }  // Ramp down
+    // ],
+    // thresholds: {
+    //     http_req_duration: ['p(95)<300'],
+    //     http_req_failed: ['rate<0.01'],
+    //     checks: ['rate>0.99']
+    // }
 }
 
 export function setup() {

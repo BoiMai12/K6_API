@@ -1,0 +1,16 @@
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug k6 Script",
+      "type": "k6",
+      "request": "launch",
+      "program": "${file}",
+      "k6Args": [
+        "--vus", "1",
+        "--iterations", "1"
+      ]
+    }
+  ]
+}
